@@ -24,3 +24,5 @@ Widget logo() {
     ),
   );
 }
+
+//TextStyle(color: Colors.white, fontSize: 25, fontStyle: FontStyle.italic),
