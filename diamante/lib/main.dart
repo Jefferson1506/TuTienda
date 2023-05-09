@@ -149,19 +149,27 @@ class Login extends StatelessWidget {
                     backgroundColor: Color.fromARGB(255, 65, 39, 34),
                     elevation: 14),
                 onPressed: () {
-                  ListaUser();
-                  ver();
-                  // if (validarIngreso(controllerUser.text.toString().trim(),
-                  //         controllerClave.text.toString().trim(), context) !=
-                  //     false) {
+                  bool pp = validarIngreso(
+                      controllerUser.text.toString().trim(),
+                      controllerClave.text.toString().trim(),
+                      context);
+                  if (pp != false) {
+                    var respuesta = categoria(
+                      controllerUser.text.toString().trim(),
+                      controllerClave.text.toString().trim(),
+                    );
 
-                  //     Navigator.push(context,
-                  //         MaterialPageRoute(builder: (_) => PrincipalLogin()));
-
-                  // }
-
-                  //  Navigator.push(context,
-                  //      MaterialPageRoute(builder: (_) => PrincipalLogin()));
+                    switch (respuesta) {
+                      case "ADM":
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => PrincipalLogin()));
+                        break;
+                      case "Cliente":
+                        break;
+                    }
+                  }
                 },
                 child: Text(
                   "Entrar",

@@ -11,12 +11,12 @@ Future<List<Usuario>> ListaUser() async {
   QuerySnapshot querySnapshot = await userC.get();
   querySnapshot.docs.forEach((document) {
     Map<String, dynamic> data = document.data() as Map<String, dynamic>;
-    String edad = data["Edad"];
-    String nombre = data["Nombre C"];
-    String id = data["Id"];
-    String tipo = data["Tipo"];
-    String user = data["User"];
+    String nombre = data["nombre"];
+    String edad = data["edad"];
+    String user = data["user"];
     String clave = data["clave"];
+    String id = data["id"];
+    String tipo = data["tipo"];
     Usuario usuario = Usuario(
         edad: edad,
         id: id,
@@ -25,7 +25,6 @@ Future<List<Usuario>> ListaUser() async {
         user: user,
         clave: clave);
     lista.add(usuario);
- 
   });
   return lista;
 }
