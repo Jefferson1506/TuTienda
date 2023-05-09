@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:diamante/adm.dart';
 import 'package:diamante/listaProductos.dart';
 import 'package:diamante/utilidades.dart';
+import 'package:diamante/validar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -80,7 +82,8 @@ class Login extends StatelessWidget {
                   fontSize: 20,
                   fontStyle: FontStyle.italic),
               decoration: InputDecoration(
-                  labelStyle: TextStyle(color: Color.fromARGB(255, 216, 185, 31)),
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 216, 185, 31)),
                   filled: true,
                   fillColor: Color.fromARGB(255, 193, 129, 50),
                   labelText: "Usuario",
@@ -88,7 +91,9 @@ class Login extends StatelessWidget {
                     "https://ionian-olive-bc9.notion.site/image/https%3A%2F%2Fcdn.leonardo.ai%2Fusers%2F0360ce33-a7dc-440d-8b88-90b31b739e53%2Fgenerations%2F24e2ec22-4a9b-4587-98c0-f81648bca67a%2Fvariations%2FDefault_person_icon_login_947D5E_3F3A340C00000B0400_0_24e2ec22-4a9b-4587-98c0-f81648bca67a_0.png?id=bb15bd50-e795-4a06-8e03-ef2aabb3ebd1&table=block&spaceId=df53a026-b4a7-403c-a2e1-ea5405b9ddc8&width=380&userId=&cache=v2",
                     width: 12,
                   ),
-                  focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Color.fromARGB(255, 251, 238, 49))),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color.fromARGB(255, 251, 238, 49))),
                   suffixIcon: IconButton(
                     onPressed: () => controllerUser.clear(),
                     icon: Icon(Icons.clear_all_rounded),
@@ -110,7 +115,8 @@ class Login extends StatelessWidget {
                   fontSize: 20,
                   fontStyle: FontStyle.italic),
               decoration: InputDecoration(
-                  labelStyle: TextStyle(color: Color.fromARGB(255, 216, 185, 31)),
+                  labelStyle:
+                      TextStyle(color: Color.fromARGB(255, 216, 185, 31)),
                   focusedBorder: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Color.fromARGB(255, 251, 238, 49))),
@@ -138,7 +144,20 @@ class Login extends StatelessWidget {
                     shadowColor: Color.fromARGB(255, 240, 174, 42),
                     backgroundColor: Color.fromARGB(255, 65, 39, 34),
                     elevation: 14),
-                onPressed: () {},
+                onPressed: () {
+                  // if (validarIngreso(controllerUser.text.toString().trim(),
+                  //         controllerClave.text.toString().trim(), context) !=
+                  //     false) {
+                   
+                  //     Navigator.push(context,
+                  //         MaterialPageRoute(builder: (_) => PrincipalLogin()));
+                    
+                  // }
+
+                   Navigator.push(context,
+                       MaterialPageRoute(builder: (_) => PrincipalLogin()));
+                  
+                },
                 child: Text(
                   "Entrar",
                   style: TextStyle(
@@ -147,8 +166,18 @@ class Login extends StatelessWidget {
                       fontStyle: FontStyle.italic),
                 )),
           ),
-          TextButton(onPressed: (){}, child: Text("ListaView",style: TextStyle(color: Colors.greenAccent),)),
-          TextButton(onPressed: (){}, child: Text("Registrarse",style: TextStyle(color: Color.fromARGB(255, 181, 211, 197)),))
+          TextButton(
+              onPressed: () {},
+              child: Text(
+                "ListaView",
+                style: TextStyle(color: Colors.greenAccent),
+              )),
+          TextButton(
+              onPressed: () {},
+              child: Text(
+                "Registrarse",
+                style: TextStyle(color: Color.fromARGB(255, 181, 211, 197)),
+              ))
         ])
       ],
       //texto link para otras cosas
