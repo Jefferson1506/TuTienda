@@ -2,6 +2,7 @@
 
 import 'package:diamante/adm.dart';
 import 'package:diamante/listaProductos.dart';
+import 'package:diamante/peticiones.dart';
 import 'package:diamante/utilidades.dart';
 import 'package:diamante/validar.dart';
 import 'package:flutter/material.dart';
@@ -9,10 +10,10 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-  );
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -148,18 +149,19 @@ class Login extends StatelessWidget {
                     backgroundColor: Color.fromARGB(255, 65, 39, 34),
                     elevation: 14),
                 onPressed: () {
+                  ListaUser();
+                  ver();
                   // if (validarIngreso(controllerUser.text.toString().trim(),
                   //         controllerClave.text.toString().trim(), context) !=
                   //     false) {
-                   
+
                   //     Navigator.push(context,
                   //         MaterialPageRoute(builder: (_) => PrincipalLogin()));
-                    
+
                   // }
 
-                   Navigator.push(context,
-                       MaterialPageRoute(builder: (_) => PrincipalLogin()));
-                  
+                  //  Navigator.push(context,
+                  //      MaterialPageRoute(builder: (_) => PrincipalLogin()));
                 },
                 child: Text(
                   "Entrar",

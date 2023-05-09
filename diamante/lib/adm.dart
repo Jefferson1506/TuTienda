@@ -66,8 +66,8 @@ Widget CuerpoAdm(BuildContext context) {
           //lista de productos
       Container(
           margin: EdgeInsets.all(30),
-          width: 100,
-          height: 100,
+          width: 150,
+          height: 150,
           child: IconButton(
               onPressed: () {},
               icon: Icon(
@@ -75,32 +75,16 @@ Widget CuerpoAdm(BuildContext context) {
                 size: 0,
               )),
           decoration: BoxDecoration(
-            color: Colors.black,
+
             image: DecorationImage(
                 image: NetworkImage(
-                    "image.png")),
-          )),
-      Container(
-          margin: EdgeInsets.all(30),
-          width: 100,
-          height: 100,
-          child: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.abc,
-                size: 0,
-              )),
-          decoration: BoxDecoration(
-            color: Colors.black,
-            image: DecorationImage(
-                image: NetworkImage(
-                    "https://w7.pngwing.com/pngs/159/706/png-transparent-animated-film-drawing-animated-cartoon-kavaii-pucca-season-1-black-hair-logo-logo-vector.png")),
+                    "https://ionian-olive-bc9.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F66160e94-c2cc-4b97-b2bc-9a90d17780b1%2FUntitled.png?id=e8e92294-e7bc-401d-9c58-7a0774da498b&table=block&spaceId=df53a026-b4a7-403c-a2e1-ea5405b9ddc8&width=2000&userId=&cache=v2")),
           )),
           //lista de cliente
       Container(
           margin: EdgeInsets.all(30),
-          width: 100,
-          height: 100,
+          width: 150,
+          height: 150,
           child: IconButton(
               onPressed: () {},
               icon: Icon(
@@ -108,7 +92,6 @@ Widget CuerpoAdm(BuildContext context) {
                 size: 0,
               )),
           decoration: BoxDecoration(
-            color: Colors.black,
             image: DecorationImage(
                 image: NetworkImage(
                     "https://ionian-olive-bc9.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2844ab6a-1e76-4063-9660-b55cff3bb2a5%2FUntitled.png?id=6855b936-2d34-450b-8028-f7cbd9609c1a&table=block&spaceId=df53a026-b4a7-403c-a2e1-ea5405b9ddc8&width=2000&userId=&cache=v2")),
