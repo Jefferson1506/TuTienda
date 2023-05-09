@@ -2,6 +2,7 @@
 
 import 'package:diamante/adm.dart';
 import 'package:diamante/listaProductos.dart';
+import 'package:diamante/modelos.dart';
 import 'package:diamante/peticiones.dart';
 import 'package:diamante/utilidades.dart';
 import 'package:diamante/validar.dart';
@@ -154,21 +155,26 @@ class Login extends StatelessWidget {
                       controllerClave.text.toString().trim(),
                       context);
                   if (pp != false) {
-                    var respuesta = categoria(
-                      controllerUser.text.toString().trim(),
-                      controllerClave.text.toString().trim(),
-                    );
-
-                    switch (respuesta) {
-                      case "ADM":
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => PrincipalLogin()));
-                        break;
-                      case "Cliente":
-                        break;
-                    }
+                    Future<List<Usuario>> a = ListaUser();
+                    a.then((lista) {
+                      for (int i = 0; i < lista.length; i++) {
+                        if (lista[i].user.toString() ==
+                                controllerUser.text.toString().trim() &&
+                            lista[i].clave.toString() ==
+                                controllerClave.text.toString().trim()) {
+                          switch (lista[i].tipo.toString()) {
+                            case "ADM":
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => PrincipalLogin()));
+                              break;
+                            case "Cliente":
+                              break;
+                          }
+                        }
+                      }
+                    });
                   }
                 },
                 child: Text(

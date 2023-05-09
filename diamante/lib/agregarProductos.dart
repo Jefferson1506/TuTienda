@@ -21,7 +21,7 @@ class AdicionarArticulo extends StatelessWidget {
             //Iconobutto
           ),
           body: Container(
-            padding: EdgeInsets.all(30),
+            
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.topCenter,
@@ -33,7 +33,22 @@ class AdicionarArticulo extends StatelessWidget {
                       Color.fromARGB(255, 98, 50, 32),
                     ],
                     tileMode: TileMode.repeated)),
-            child: VistaArticulo(),
+            child: ListView(children: [VistaArticulo(), Container(
+          height: 40,
+          width: 50,
+          margin: EdgeInsets.all(10),
+          child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  shadowColor: Color.fromARGB(255, 240, 174, 42),
+                  backgroundColor: Color.fromARGB(255, 154, 19, 87),
+                  elevation: 14),
+              child: Text(
+                "Cancelar",
+                style: TextStyle(
+                    fontSize: 20.0, color: Color.fromARGB(255, 255, 255, 255)),
+              ),
+              onPressed: () => Navigator.pop(context)),
+        )]),
           )),
     );
   }
@@ -62,7 +77,7 @@ class _VistaArticuloState extends State<VistaArticulo> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
       children: [
         Container(
           padding: EdgeInsets.symmetric(vertical: 10.0),
@@ -239,8 +254,8 @@ class _VistaArticuloState extends State<VistaArticulo> {
           ),
         ),
         Container(
-          height: 40,
-          width: 90,
+          height: 60,
+          width: 200,
           margin: EdgeInsets.symmetric(vertical: 30),
           child: ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -255,21 +270,7 @@ class _VistaArticuloState extends State<VistaArticulo> {
               ),
               onPressed: () {}),
         ),
-        Container(
-          height: 40,
-          width: 90,
-          child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  shadowColor: Color.fromARGB(255, 240, 174, 42),
-                  backgroundColor: Color.fromARGB(255, 154, 19, 87),
-                  elevation: 14),
-              child: Text(
-                "Cancelar",
-                style: TextStyle(
-                    fontSize: 20.0, color: Color.fromARGB(255, 255, 255, 255)),
-              ),
-              onPressed: () => Navigator.pop(context)),
-        )
+       
       ],
     );
   }

@@ -1,3 +1,5 @@
+// ignore_for_file: unrelated_type_equality_checks
+
 import 'dart:ffi';
 
 import 'package:diamante/modelos.dart';
@@ -15,12 +17,9 @@ bool validarIngreso(String user, String clave, BuildContext context) {
     showMensaje(context, "Error..\n" "\nEl usuario se encuentra vacio");
   } else if (clave.isEmpty) {
     showMensaje(context, "Error..\n" "\nLa clave se encuentra vacio");
-  } else if (existe(user, clave) == true) {
+  } else if (user.isNotEmpty && clave.isNotEmpty) {
     ingreso = true;
-  } else {
-    showMensaje(context, "EL Usuario no existe");
-    ingreso = false;
-  }
+  } 
 
   return ingreso;
 }
@@ -29,24 +28,13 @@ bool existe(String user, String clave) {
   var respuesta = false;
   Future<List<Usuario>> a = ListaUser();
   a.then((lista) {
-    for (int i = 0; i <= lista.length; i++) {
-      if (lista[i].user == user && lista[i].clave == clave) {
-        respuesta = true;
+    for (int i = 0; i < lista.length; i++) {
+      if (lista[i].user.toString() == user &&
+          lista[i].clave.toString() == clave) {
+       
       }
     }
   });
-  return respuesta;
-}
 
-String categoria(String user, String clave) {
-  var respuesta = "";
-  Future<List<Usuario>> a = ListaUser();
-  a.then((lista) {
-    for (int i = 0; i <= lista.length; i++) {
-      if (lista[i].user == user && lista[i].clave == clave) {
-        respuesta = lista[i].tipo;
-      }
-    }
-  });
   return respuesta;
 }
