@@ -24,7 +24,7 @@ bool validarIngreso(String user, String clave, BuildContext context) {
   return ingreso;
 }
 
-bool existe(String user, String clave) {
+Future existe(String user, String clave) async {
   var respuesta = false;
   Future<List<Usuario>> a = ListaUser();
   a.then((lista) {

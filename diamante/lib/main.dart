@@ -149,15 +149,14 @@ class Login extends StatelessWidget {
                     shadowColor: Color.fromARGB(255, 240, 174, 42),
                     backgroundColor: Color.fromARGB(255, 65, 39, 34),
                     elevation: 14),
-                onPressed: () {
+                onPressed: () async {
                   bool pp = validarIngreso(
                       controllerUser.text.toString().trim(),
                       controllerClave.text.toString().trim(),
                       context);
                   if (pp != false) {
-                    Future<List<Usuario>> a = ListaUser();
-                    a.then((lista) {
-                      for (int i = 0; i < lista.length; i++) {
+                    List<Usuario> lista = await ListaUser();
+                    for (int i = 0; i < lista.length; i++) {
                         if (lista[i].user.toString() ==
                                 controllerUser.text.toString().trim() &&
                             lista[i].clave.toString() ==
@@ -174,7 +173,6 @@ class Login extends StatelessWidget {
                           }
                         }
                       }
-                    });
                   }
                 },
                 child: Text(
