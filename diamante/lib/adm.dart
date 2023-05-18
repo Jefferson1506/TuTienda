@@ -110,10 +110,10 @@ Widget CuerpoAdm(BuildContext context) {
                     borderRadius: BorderRadius.all(Radius.circular(20)))),
             onPressed: () {
               Navigator.pop(context);
-
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+ ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: const Text('Sesion Cerrada' '  Lindo Dia'),
               ));
+    
             },
             child: Text(
               "Atras",
